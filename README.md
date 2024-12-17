@@ -12,6 +12,12 @@ Integrantes do Grupo:<br>
 # Introdução
 Este projeto do github é uma fork do projeto original desenvolvido por Henrique Garcia (@griloHBG), disponível em https://github.com/griloHBG/eesc-aero-embedded-systems. Portanto, o objetivo é realizar alterações de forma a corrigir bugs, tornar o software mais fácil de utilizar e expandir suas funcionalidades. Tais objetivos foram propostos pelo docente supracitado, cujo intuito é estimular o desenvolvimento dos alunos envolvidos na área de sistemas embarcados.
 
+Este projeto visa a implementação de um sistema de controle de motores para sistemas embarcados utilizando diversas estratégias de controle, como PID e dLQR. 
+
+Um controle PID (Proporcional, Integral, Derivativo) é uma técnica amplamente utilizada em sistemas de controle automático para ajustar a saída de um processo de modo a alcançar um valor desejado (setpoint). Esse tipo de controle combina três ações básicas: a componente proporcional (P), que responde ao erro instantâneo; a componente integral (I), que acumula o erro ao longo do tempo para corrigir desvios persistentes que o componente proporcional não consegue resolver; e a componente derivativa (D), que reage à taxa de variação do erro, ajudando a antecipar mudanças e reduzir excessos de resposta, embora seja sensível a ruídos e requeira ajustes cuidadosos.
+
+Já o controle LQR é uma técnica de controle ótimo aplicada a sistemas dinâmicos lineares com realimentação de estados. Ele é usado para projetar um controlador que minimiza um funcional de custo quadrático, buscando um equilíbrio entre o desempenho do sistema e o esforço de controle.
+
 # Quickstart
 
 ## Requisitos
@@ -39,5 +45,7 @@ pkg-config --libs liblely-coapp
 make
 ```
 Seu arquivo executável para ARM estará disponível na pasta build_arm com o nome "eesc-aero-embedded-systems-grupoMK".
+
+
 
 

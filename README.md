@@ -4,6 +4,7 @@ Docente: Glauco Augusto de Paula Caurin
 <br>
 Integrantes do Grupo:<br>
                       Alice Czyz Froes Fontes - 11802478 <br>
+                      Guilherme Azevedo Escudeiro - 11345600 <br>
                       Jorge Henrique Mellega - 11802610 <br>
                       Rhayna Christiani Vasconcelos Marques Casado - 13676429 <br>
                       Jackson Wagner Silva - 12696211 <br>
@@ -17,23 +18,23 @@ Este projeto implementa diferentes métodos de controle (PID, DLQR e DLQR-Event)
 # Funcionalidades
 Modos de controle:
 
-    position-mode: Controle de posição sem parâmetros adicionais.
-    current-mode: Controle de corrente sem parâmetros adicionais.
-    pid: Controle PID com parâmetros ajustáveis (Kp, Kd, Ki).
-    dlqr: Controle DLQR com presets de tipo de referência.
-    dlqr-event: Controle DLQR com eventos e presets configuráveis.
++ position-mode: Controle de posição sem parâmetros adicionais.
++ current-mode: Controle de corrente sem parâmetros adicionais.
++ pid: Controle PID com parâmetros ajustáveis (Kp, Kd, Ki).
++ dlqr: Controle DLQR com presets de tipo de referência.
++ dlqr-event: Controle DLQR com eventos e presets configuráveis.
 
 Presets do controlador:
 
-    DR6, EDR24, EDR83, DC6, EDC56, EDC103.
++ DR6, EDR24, EDR83, DC6, EDC56, EDC103.
 
 Registro de dados:
 
-    Os dados do experimento são armazenados em arquivos CSV com informações como tempo, erros, controle e entradas.
++ Os dados do experimento são armazenados em arquivos CSV com informações como tempo, erros, controle e entradas.
 
 Configuração avançada:
 
-    Suporte para variáveis de ambiente para ajustar matrizes de ganho (SYS_DLQR_K) e parâmetros de evento (EVENT_A_B_SIGMA).
++ Suporte para variáveis de ambiente para ajustar matrizes de ganho (SYS_DLQR_K) e parâmetros de evento (EVENT_A_B_SIGMA).
 
 # Quickstart
 

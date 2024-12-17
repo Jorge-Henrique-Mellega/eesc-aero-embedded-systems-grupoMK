@@ -4,6 +4,7 @@ Docente: Glauco Augusto de Paula Caurin
 <br>
 Integrantes do Grupo:<br>
                       Alice Czyz Froes Fontes - 11802478 <br>
+                      Guilherme Azevedo Escudeiro - 11345600 <br>
                       Jorge Henrique Mellega - 11802610 <br>
                       Rhayna Christiani Vasconcelos Marques Casado - 13676429 <br>
                       Jackson Wagner Silva - 12696211 <br>
@@ -11,6 +12,29 @@ Integrantes do Grupo:<br>
 
 # Introdução
 Este projeto do github é uma fork do projeto original desenvolvido por Henrique Garcia (@griloHBG), disponível em https://github.com/griloHBG/eesc-aero-embedded-systems. Portanto, o objetivo é realizar alterações de forma a corrigir bugs, tornar o software mais fácil de utilizar e expandir suas funcionalidades. Tais objetivos foram propostos pelo docente supracitado, cujo intuito é estimular o desenvolvimento dos alunos envolvidos na área de sistemas embarcados.
+
+Este projeto implementa diferentes métodos de controle (PID, DLQR e DLQR-Event) para um sistema de controle baseado em CANopen. Ele utiliza as bibliotecas Armadillo e ManoplaLelyBBB para cálculo matricial e comunicação com dispositivos, respectivamente. O código inclui funcionalidades para ajustar os parâmetros do controlador, monitorar o desempenho do sistema e registrar os dados do experimento em arquivos de log.
+
+# Funcionalidades
+Modos de controle:
+
++ position-mode: Controle de posição sem parâmetros adicionais.
++ current-mode: Controle de corrente sem parâmetros adicionais.
++ pid: Controle PID com parâmetros ajustáveis (Kp, Kd, Ki).
++ dlqr: Controle DLQR com presets de tipo de referência.
++ dlqr-event: Controle DLQR com eventos e presets configuráveis.
+
+Presets do controlador:
+
++ DR6, EDR24, EDR83, DC6, EDC56, EDC103.
+
+Registro de dados:
+
++ Os dados do experimento são armazenados em arquivos CSV com informações como tempo, erros, controle e entradas.
+
+Configuração avançada:
+
++ Suporte para variáveis de ambiente para ajustar matrizes de ganho (SYS_DLQR_K) e parâmetros de evento (EVENT_A_B_SIGMA).
 
 # Quickstart
 
@@ -45,5 +69,7 @@ pkg-config --libs liblely-coapp
 make
 ```
 Seu arquivo executável para ARM estará disponível na pasta build_arm com o nome "eesc-aero-embedded-systems".
+
+
 
 

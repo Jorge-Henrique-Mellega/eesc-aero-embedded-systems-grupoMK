@@ -12,11 +12,28 @@ Integrantes do Grupo:<br>
 # Introdução
 Este projeto do github é uma fork do projeto original desenvolvido por Henrique Garcia (@griloHBG), disponível em https://github.com/griloHBG/eesc-aero-embedded-systems. Portanto, o objetivo é realizar alterações de forma a corrigir bugs, tornar o software mais fácil de utilizar e expandir suas funcionalidades. Tais objetivos foram propostos pelo docente supracitado, cujo intuito é estimular o desenvolvimento dos alunos envolvidos na área de sistemas embarcados.
 
-Este projeto visa a implementação de um sistema de controle de motores para sistemas embarcados utilizando diversas estratégias de controle, como PID e dLQR. 
+Este projeto implementa diferentes métodos de controle (PID, DLQR e DLQR-Event) para um sistema de controle baseado em CANopen. Ele utiliza as bibliotecas Armadillo e ManoplaLelyBBB para cálculo matricial e comunicação com dispositivos, respectivamente. O código inclui funcionalidades para ajustar os parâmetros do controlador, monitorar o desempenho do sistema e registrar os dados do experimento em arquivos de log.
 
-Um controle PID (Proporcional, Integral, Derivativo) é uma técnica amplamente utilizada em sistemas de controle automático para ajustar a saída de um processo de modo a alcançar um valor desejado (setpoint). Esse tipo de controle combina três ações básicas: a componente proporcional (P), que responde ao erro instantâneo; a componente integral (I), que acumula o erro ao longo do tempo para corrigir desvios persistentes que o componente proporcional não consegue resolver; e a componente derivativa (D), que reage à taxa de variação do erro, ajudando a antecipar mudanças e reduzir excessos de resposta, embora seja sensível a ruídos e requeira ajustes cuidadosos.
+# Funcionalidades
+Modos de controle:
 
-Já o controle LQR é uma técnica de controle ótimo aplicada a sistemas dinâmicos lineares com realimentação de estados. Ele é usado para projetar um controlador que minimiza um funcional de custo quadrático, buscando um equilíbrio entre o desempenho do sistema e o esforço de controle.
+    position-mode: Controle de posição sem parâmetros adicionais.
+    current-mode: Controle de corrente sem parâmetros adicionais.
+    pid: Controle PID com parâmetros ajustáveis (Kp, Kd, Ki).
+    dlqr: Controle DLQR com presets de tipo de referência.
+    dlqr-event: Controle DLQR com eventos e presets configuráveis.
+
+Presets do controlador:
+
+    DR6, EDR24, EDR83, DC6, EDC56, EDC103.
+
+Registro de dados:
+
+    Os dados do experimento são armazenados em arquivos CSV com informações como tempo, erros, controle e entradas.
+
+Configuração avançada:
+
+    Suporte para variáveis de ambiente para ajustar matrizes de ganho (SYS_DLQR_K) e parâmetros de evento (EVENT_A_B_SIGMA).
 
 # Quickstart
 
